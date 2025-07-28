@@ -1,0 +1,17 @@
+.container {
+  max-width: 80rem;
+  padding-inline: 2rem;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.aline-center {
+  align-items: center;
+}
