@@ -15,3 +15,11 @@
 .aline-center {
   align-items: center;
 }
+
+.flex-columns {
+  flex-direction: column;
+}
+
+.flex-reverse {
+  flex-direction: column-reverse;
+}

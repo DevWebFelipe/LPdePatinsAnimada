@@ -1,5 +1,11 @@
 #hero {
+  --top-star-1: 35%;
+  --botton-star-2: 35%;
+  --right-star-2: 0;
+  --animation-mobile-width: 0px;
+
   padding-block: 2.5rem;
+  overflow: hidden;
 
   & h1 div {
     /* precisa ficar em linha e ainda assim, aceitar altura e largura
@@ -31,7 +37,246 @@
   & h1 span {
     display: block;
 
-    animation: slideUp 6s infinite ease;
+    animation: slideUp 5s 2s infinite ease;
+  }
+
+  /* buttons */
+  & .buttons {
+    display: flex;
+    gap: 2rem;
+    margin-top: 3rem;
+
+    & .button {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+
+      border-radius: 5rem;
+
+      /* se for usar transform, lembrar que aqui também vai ser transforme */
+      transition: scale 350ms;
+
+      /* sem espaço porque quero .button e também o .buy */
+      &.buy {
+        padding: 1.5rem 3rem;
+        background-color: var(--snitap-sun);
+      }
+
+      &.play span {
+        padding: 1.5rem;
+        border-radius: 50%;
+        background-color: white;
+        display: flex;
+      }
+
+      &:hover {
+        scale: 1.1;
+
+        /* Em alguns navegadores o scale ainda não funciona, aí basta trocar por transform */
+        /* transform: scale(1.1); */
+      }
+    }
+
+    & .shadow {
+      box-shadow: 0 2px 5px rgb(0 0 0 / 0.1), 0 9px 9px rgb(0 0 0 / 0.09),
+        0 20px 12px rgb(0 0 0 / 0.05), 0 36px 15px rgb(0 0 0 / 0.01);
+    }
+  }
+
+  /* animação do patins */
+  & > div:nth-child(2) {
+    display: block;
+    width: 100%;
+    max-width: 30.5rem;
+    height: 30.5rem;
+
+    & .content {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    & img {
+      position: absolute;
+      width: 100%;
+    }
+
+    & img[src*="ellipse"] {
+      /* 94% do espaço e 3% de margem em todas as direções */
+      width: 94%;
+      top: 3%;
+      left: 3%;
+
+      /* Isso vai manter o componente do lado de fora para entrar
+         com a animação */
+      /* forwards vai manter o componente no estado em que estava ao finalizar a animação */
+      transform: translateX(200%);
+      animation: slideIn 3s 200ms ease forwards;
+    }
+
+    & img[src*="patins"] {
+      z-index: 1;
+
+      transform: translateX(200%);
+      animation: slideIn 3s ease forwards;
+    }
+
+    & img[src*="stars-1"] {
+      max-width: 5.5rem;
+      top: var(--top-star-1);
+      z-index: 0;
+
+      opacity: 0;
+      transform: translateX(400%);
+      animation: slideIn 2s 800ms ease both, appear 100ms 800ms both;
+    }
+
+    & img[src*="stars-2"] {
+      max-width: 2.5rem;
+      right: var(--right-star-2);
+      bottom: var(--botton-star-2);
+
+      transform: translateX(400%);
+      animation: slideIn 2.2s 800ms ease both;
+    }
+  }
+}
+
+@media (width <= 1060px) {
+  #hero {
+    flex-direction: column-reverse;
+    gap: 2rem;
+
+    & .content {
+      margin-top: 1rem;
+    }
+
+    & .buttons {
+      justify-content: center;
+    }
+  }
+}
+
+@media (width <= 640px) {
+  #hero {
+    --animation-mobile-width: 2.5rem;
+
+    flex-direction: column-reverse;
+    gap: 2rem;
+
+    & h1 {
+      font-size: 2rem;
+    }
+
+    & .content {
+      margin-top: 1rem;
+    }
+
+    & .buttons {
+      max-width: 312px;
+      flex-direction: column-reverse;
+      justify-content: center;
+    }
+  }
+}
+
+@media (width <= 540px) {
+  #hero {
+    --top-star-1: 30%;
+    --botton-star-2: 40%;
+    --right-star-2: -3px;
+  }
+}
+
+@media (width <= 490px) {
+  #hero {
+    --top-star-1: 25%;
+    --botton-star-2: 50%;
+    --right-star-2: -3px;
+  }
+}
+
+@media (width <= 440px) {
+  #hero {
+    --top-star-1: 25%;
+    --botton-star-2: 50%;
+    --right-star-2: -3px;
+
+    & > div:nth-child(2) {
+      & img[src*="stars-1"] {
+        max-width: 4.5rem;
+      }
+
+      & img[src*="stars-2"] {
+        max-width: 2rem;
+      }
+    }
+  }
+}
+
+@media (width <= 420px) {
+  #hero {
+    --top-star-1: 20%;
+    --botton-star-2: 60%;
+    --right-star-2: -3px;
+  }
+}
+
+@media (width <= 380px) {
+  #hero {
+    & > div:nth-child(2) {
+      & img[src*="stars-1"] {
+        max-width: 3.5rem;
+      }
+
+      & img[src*="stars-2"] {
+        max-width: 1.5rem;
+      }
+    }
+  }
+}
+
+@media (width <= 350px) {
+  #hero {
+    --top-star-1: 15%;
+    --botton-star-2: 65%;
+    --right-star-2: -3px;
+  }
+}
+
+@media (width <= 310px) {
+  #hero {
+    --top-star-1: 16%;
+    --botton-star-2: 70%;
+    --right-star-2: 0;
+  }
+
+  #hero {
+    & > div:nth-child(2) {
+      & img[src*="stars-1"] {
+        max-width: 2.5rem;
+      }
+
+      & img[src*="stars-2"] {
+        max-width: 1rem;
+      }
+    }
+  }
+}
+
+@keyframes slideIn {
+  50% {
+    transform: translateX(-20px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
   }
 }
 
