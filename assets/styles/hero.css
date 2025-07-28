@@ -1,4 +1,5 @@
 #hero {
+  --slide-step: 5rem;
   --top-star-1: 35%;
   --botton-star-2: 35%;
   --right-star-2: 0;
@@ -12,7 +13,7 @@
        por isso precisa ser inline-block, pois aí aceita as duas coisas */
     display: inline-block;
     overflow: hidden;
-    height: 5rem;
+    height: var(--slide-step);
     width: min-content;
     vertical-align: bottom;
   }
@@ -160,6 +161,7 @@
 @media (width <= 640px) {
   #hero {
     --animation-mobile-width: 2.5rem;
+    --slide-step: 2.5rem;
 
     flex-direction: column-reverse;
     gap: 2rem;
@@ -281,72 +283,70 @@
 }
 
 @keyframes slideUp {
-  /* parado */
   0%,
   22% {
     transform: translateY(0);
   }
 
-  /* movimento da troca */
   23% {
-    transform: translateY(calc(-5rem - 15px));
+    transform: translateY(calc(-1 * var(--slide-step) - 15px));
   }
 
   25% {
-    transform: translateY(calc(-5rem + 10px));
+    transform: translateY(calc(-1 * var(--slide-step) + 10px));
   }
 
   27% {
-    transform: translateY(calc(-5rem - 5px));
+    transform: translateY(calc(-1 * var(--slide-step) - 5px));
   }
 
   29% {
-    transform: translateY(calc(-5rem + 5px));
+    transform: translateY(calc(-1 * var(--slide-step) + 5px));
   }
 
   33%,
   55% {
-    transform: translateY(-5rem);
+    transform: translateY(calc(-1 * var(--slide-step)));
   }
 
   56% {
-    transform: translateY(calc(-10rem - 15px));
+    transform: translateY(calc(-2 * var(--slide-step) - 15px));
   }
 
   58% {
-    transform: translateY(calc(-10rem + 10px));
+    transform: translateY(calc(-2 * var(--slide-step) + 10px));
   }
 
   60% {
-    transform: translateY(calc(-10rem - 5px));
+    transform: translateY(calc(-2 * var(--slide-step) - 5px));
   }
 
   62% {
-    transform: translateY(calc(-10rem + 5px));
+    transform: translateY(calc(-2 * var(--slide-step) + 5px));
   }
 
   66%,
   88% {
-    transform: translateY(-10rem);
+    transform: translateY(calc(-2 * var(--slide-step)));
   }
 
   89% {
-    transform: translateY(calc(-15rem - 15px));
+    transform: translateY(calc(-3 * var(--slide-step) - 15px));
   }
 
   91% {
-    transform: translateY(calc(-15rem + 10px));
+    transform: translateY(calc(-3 * var(--slide-step) + 10px));
   }
 
   93% {
-    transform: translateY(calc(-15rem - 5px));
+    transform: translateY(calc(-3 * var(--slide-step) - 5px));
   }
 
   95% {
-    transform: translateY(calc(-15rem + 5px));
+    transform: translateY(calc(-3 * var(--slide-step) + 5px));
   }
 
   100% {
-    transform: translateY(-15rem);
+    transform: translateY(calc(-3 * var(--slide-step)));
   }
 }
