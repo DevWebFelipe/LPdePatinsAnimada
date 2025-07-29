@@ -19,4 +19,8 @@
   --text-base: 1rem;
   --text-lg: 2.5rem;
   --text-xl: 4rem;
+
+  --font-base: 16px;
+  --font-heading: 4rem;
+  --font-heading-mobile: 2rem;
 }

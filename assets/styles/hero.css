@@ -1,7 +1,7 @@
 #hero {
   --slide-step: 5rem;
   --top-star-1: 35%;
-  --botton-star-2: 35%;
+  --bottom-star-2: 35%;
   --right-star-2: 0;
   --animation-mobile-width: 0px;
 
@@ -20,6 +20,7 @@
 
   & h1 {
     max-width: 40rem;
+    font-size: var(--font-heading);
   }
 
   & h1 span:nth-child(1),
@@ -135,7 +136,7 @@
     & img[src*="stars-2"] {
       max-width: 2.5rem;
       right: var(--right-star-2);
-      bottom: var(--botton-star-2);
+      bottom: var(--bottom-star-2);
 
       transform: translateX(400%);
       animation: slideIn 2.2s 800ms ease both;
@@ -167,7 +168,7 @@
     gap: 2rem;
 
     & h1 {
-      font-size: 2rem;
+      font-size: var(--font-heading-mobile);
     }
 
     & .content {
@@ -185,7 +186,7 @@
 @media (width <= 540px) {
   #hero {
     --top-star-1: 30%;
-    --botton-star-2: 40%;
+    --bottom-star-2: 40%;
     --right-star-2: -3px;
 
     & > div:nth-child(2) {
@@ -197,7 +198,7 @@
 @media (width <= 490px) {
   #hero {
     --top-star-1: 25%;
-    --botton-star-2: 50%;
+    --bottom-star-2: 50%;
     --right-star-2: -3px;
 
     & > div:nth-child(2) {
@@ -209,7 +210,7 @@
 @media (width <= 440px) {
   #hero {
     --top-star-1: 25%;
-    --botton-star-2: 50%;
+    --bottom-star-2: 50%;
     --right-star-2: -3px;
 
     & > div:nth-child(2) {
@@ -229,7 +230,7 @@
 @media (width <= 420px) {
   #hero {
     --top-star-1: 20%;
-    --botton-star-2: 60%;
+    --bottom-star-2: 60%;
     --right-star-2: -3px;
 
     & > div:nth-child(2) {
@@ -259,7 +260,7 @@
 @media (width <= 350px) {
   #hero {
     --top-star-1: 15%;
-    --botton-star-2: 65%;
+    --bottom-star-2: 65%;
     --right-star-2: -3px;
 
     & > div:nth-child(2) {
@@ -271,7 +272,7 @@
 @media (width <= 310px) {
   #hero {
     --top-star-1: 16%;
-    --botton-star-2: 70%;
+    --bottom-star-2: 70%;
     --right-star-2: 0;
 
     & > div:nth-child(2) {
