@@ -1,0 +1,22 @@
+#footer {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
+@media (width <= 860px) {
+  #footer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: flex-start;
+    gap: 3rem;
+
+    & .nav {
+      flex-direction: column;
+    }
+
+    & .logo {
+      align-self: flex-start;
+    }
+  }
+}
