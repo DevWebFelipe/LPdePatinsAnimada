@@ -144,152 +144,6 @@
   }
 }
 
-@media (width <= 1060px) {
-  #hero {
-    flex-direction: column-reverse;
-    gap: 2rem;
-
-    & .content {
-      margin-top: 1rem;
-    }
-
-    & .buttons {
-      justify-content: center;
-    }
-  }
-}
-
-@media (width <= 640px) {
-  #hero {
-    --animation-mobile-width: 2.5rem;
-    --slide-step: 2.5rem;
-
-    flex-direction: column-reverse;
-    gap: 2rem;
-
-    & h1 {
-      font-size: var(--font-heading-mobile);
-    }
-
-    & .content {
-      margin-top: 1rem;
-    }
-
-    & .buttons {
-      max-width: 312px;
-      flex-direction: column-reverse;
-      justify-content: center;
-    }
-  }
-}
-
-@media (width <= 540px) {
-  #hero {
-    --top-star-1: 30%;
-    --bottom-star-2: 40%;
-    --right-star-2: -3px;
-
-    & > div:nth-child(2) {
-      height: 460px;
-    }
-  }
-}
-
-@media (width <= 490px) {
-  #hero {
-    --top-star-1: 25%;
-    --bottom-star-2: 50%;
-    --right-star-2: -3px;
-
-    & > div:nth-child(2) {
-      height: 410px;
-    }
-  }
-}
-
-@media (width <= 440px) {
-  #hero {
-    --top-star-1: 25%;
-    --bottom-star-2: 50%;
-    --right-star-2: -3px;
-
-    & > div:nth-child(2) {
-      height: 360px;
-
-      & img[src*="stars-1"] {
-        max-width: 4.5rem;
-      }
-
-      & img[src*="stars-2"] {
-        max-width: 2rem;
-      }
-    }
-  }
-}
-
-@media (width <= 420px) {
-  #hero {
-    --top-star-1: 20%;
-    --bottom-star-2: 60%;
-    --right-star-2: -3px;
-
-    & > div:nth-child(2) {
-      height: 360px;
-    }
-  }
-}
-
-@media (width <= 380px) {
-  #hero {
-    & > div:nth-child(2) {
-      height: 300px;
-    }
-
-    & > div:nth-child(2) {
-      & img[src*="stars-1"] {
-        max-width: 3.5rem;
-      }
-
-      & img[src*="stars-2"] {
-        max-width: 1.5rem;
-      }
-    }
-  }
-}
-
-@media (width <= 350px) {
-  #hero {
-    --top-star-1: 15%;
-    --bottom-star-2: 65%;
-    --right-star-2: -3px;
-
-    & > div:nth-child(2) {
-      height: 270px;
-    }
-  }
-}
-
-@media (width <= 310px) {
-  #hero {
-    --top-star-1: 16%;
-    --bottom-star-2: 70%;
-    --right-star-2: 0;
-
-    & > div:nth-child(2) {
-      height: 230px;
-    }
-    & > div:nth-child(2) {
-      & img[src*="stars-1"] {
-        max-width: 2.5rem;
-      }
-
-      & img[src*="stars-2"] {
-        max-width: 1rem;
-      }
-    }
-  }
-}
-
 @keyframes slideIn {
   50% {
     transform: translateX(-20px);
@@ -372,5 +226,111 @@
 
   100% {
     transform: translateY(calc(-3 * var(--slide-step)));
+  }
+}
+
+/* ===== Até 1060px - Estrutura principal mobile ===== */
+@media (width <= 1060px) {
+  #hero {
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }
+
+  #hero .content {
+    margin-top: 1rem;
+  }
+
+  #hero .buttons {
+    justify-content: center;
+  }
+}
+
+/* ===== Até 640px - Fontes menores e layout em coluna ===== */
+@media (width <= 640px) {
+  #hero {
+    --slide-step: 2.5rem;
+    font-size: 2rem;
+  }
+
+  #hero .buttons {
+    max-width: 312px;
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+
+  #hero .content {
+    margin-top: 1rem;
+  }
+}
+
+/* ===== Até 540px ===== */
+@media (width <= 540px) {
+  #hero {
+    --top-star-1: 30%;
+    --bottom-star-2: 40%;
+    --right-star-2: -3px;
+  }
+}
+
+/* ===== Até 490px ===== */
+@media (width <= 490px) {
+  #hero {
+    --top-star-1: 25%;
+    --bottom-star-2: 50%;
+    --right-star-2: -3px;
+  }
+
+  #hero > div:nth-child(2) img[src*="stars-1"] {
+    max-width: 4.5rem;
+  }
+
+  #hero > div:nth-child(2) img[src*="stars-2"] {
+    max-width: 2rem;
+  }
+}
+
+/* ===== Até 420px ===== */
+@media (width <= 420px) {
+  #hero {
+    --top-star-1: 20%;
+    --bottom-star-2: 60%;
+    --right-star-2: -3px;
+  }
+}
+
+/* ===== Até 380px - Ícones menores ===== */
+@media (width <= 380px) {
+  #hero > div:nth-child(2) img[src*="stars-1"] {
+    max-width: 3.5rem;
+  }
+
+  #hero > div:nth-child(2) img[src*="stars-2"] {
+    max-width: 1.5rem;
+  }
+}
+
+/* ===== Até 350px ===== */
+@media (width <= 350px) {
+  #hero {
+    --top-star-1: 15%;
+    --bottom-star-2: 65%;
+    --right-star-2: -3px;
+  }
+}
+
+/* ===== Até 310px - Ícones mínimos ===== */
+@media (width <= 310px) {
+  #hero {
+    --top-star-1: 16%;
+    --bottom-star-2: 70%;
+    --right-star-2: 0;
+  }
+
+  #hero > div:nth-child(2) img[src*="stars-1"] {
+    max-width: 2.5rem;
+  }
+
+  #hero > div:nth-child(2) img[src*="stars-2"] {
+    max-width: 1rem;
   }
 }
